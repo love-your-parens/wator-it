@@ -1,0 +1,7 @@
+baseURL: 'http://example.org/'
+languages:
+  en:
+    title: 'Curious Dev'
+  pl:
+    title: Kjurjus dew
+    weight: 2
