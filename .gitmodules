@@ -1,6 +1,0 @@
-[submodule "themes/ananke"]
-	path = themes/ananke
-	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
-[submodule "themes/konrad-hugo-theme"]
-	path = themes/konrad-hugo-theme
-	url = git@bitbucket.org:kerethril/konrad-hugo-theme

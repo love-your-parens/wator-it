@@ -1,0 +1,1 @@
+<ul>{{ range .Translations -}}<li><a href="{{ .Permalink }}">{{ .Lang }}{{ replace .Lang "en" "gb" | printf ":flag_%s:" | emojify }}</a></li>{{ end -}}</ul>

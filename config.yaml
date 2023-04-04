@@ -1,7 +1,12 @@
-baseURL: 'http://example.org/'
+baseURL: 'http://wator.it/'
+copyright: Konrad Wątor
 languages:
   en:
-    title: 'Curious Dev'
+    title: C'est moi Leclerc
+    languageName: English
   pl:
-    title: Kjurjus dew
+    title: To ja Leklerk
+    languageName: Polski
     weight: 2
+theme: konrad
+enableEmoji: true

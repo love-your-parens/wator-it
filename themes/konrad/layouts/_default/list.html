@@ -1,0 +1,1 @@
+{{ define "main" }}<article class="m-5"><h1>{{ .Title }}</h1>{{ .Content }}<h2>{{ i18n "recentPosts" }}</h2>{{ if .Pages }}<ul>{{ range sort .Pages ".Date" "desc" }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}</ul>{{ else }}<p>{{ i18n "noPosts" }}</p>{{ end }}</article>{{ end }}

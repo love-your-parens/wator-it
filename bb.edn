@@ -1,0 +1,69 @@
+{:pods {org.babashka/fswatcher {:version "0.0.3"}}
+ :paths ["bb"]
+ :tasks {:requires ([clojure.string :refer [join starts-with? ends-with?]])
+         :init (do
+                 (require '[pod.babashka.fswatcher :as fw])
+                 (def platform-alias
+                   (if (starts-with? (System/getProperty "os.name") "Windows")
+                     :windows :*nix))
+                 (defn run-subtasks
+                   "Interprets every command line argument as a subtask key to select.
+                      Selects all available keys if no input is given.
+                      For every selected key present in `subtasks`, `f` will be called on its value.
+                      Expected to produce side-effects only."
+                   [subtasks f]
+                   (doseq [s (or *command-line-args* (keys subtasks))]
+                     (when-let [data ((keyword s) subtasks)]
+                       (f data)))))
+
+         platform (println "Platform detected:" platform-alias)
+
+         version {:doc "Displays installed versions of individual binaries required by the project. Whitelistable, e.g.: bb version babashka node "
+                  :task (run-subtasks {:hugo ["Hugo" "hugo version"]
+                                       :babashka ["Babashka" "bb --version"]
+                                       :node ["Node.js" "node --version"]
+                                       :npm ["Npm" "npm --version"]}
+                                      (fn [[name command]]
+                                        (print (str name ": "))
+                                        (shell {:out *out*} command)))}
+
+         develop {:doc "Starts the development environment. This is divided into subtasks that you can call individually too."
+                  :task (run '-develop {:parallel true})}
+         -develop {:depends [develop:tailwind develop:hugo develop:hiccup]}
+         develop:hugo (shell "hugo serve -D --disableFastRender")
+         develop:tailwind (let [in "assets/css/tailwind.src.css"
+                                out "assets/css/tailwind.css"
+                                cmd (format "npx tailwindcss -i %s -o %s --watch" in out)]
+                            (shell {:dir "themes/konrad"} cmd))
+         develop:hiccup {:requires ([pod.babashka.fswatcher :as fw]
+                                    [hiccuped-hawk :as hh]
+                                    [clojure.core.async :as a])
+                         :task (let [ch (a/chan (a/dropping-buffer 10)
+                                                (filter (fn [e]
+                                                          (and (:path e)
+                                                               (ends-with? (:path e) ".clj")
+                                                               (#{:write :create} (:type e))))))]
+                                 (println "Instructing the hiccuped hawk to hawk your Hiccup...")
+                                 (fw/watch "themes/konrad/hiccup/"
+                                           (fn [e] (a/go (a/>! ch e)))
+                                           {:recursive true})
+                                 ;; Try to mitigate duplicate events while processing the queue.
+                                 (loop [prev-t (System/currentTimeMillis)
+                                        prev-f nil]
+                                   (let [f (:path (a/<!! ch))
+                                         t (System/currentTimeMillis)]
+                                     (when (or (not= f prev-f)
+                                               (> (- t prev-t) 10))
+                                       (time (hh/compile "themes/konrad/hiccup/" "themes/konrad/layouts/" f)))
+                                     (recur t f))))}
+
+         build {:doc "Builds the website." :depends [build:tailwind build:hugo]}
+         build:tailwind (let [in "assets/css/tailwind.src.css"
+                              out "assets/css/tailwind.css"
+                              cmd (format "npx tailwindcss -i %s -o %s" in out)]
+                          (shell {:dir "themes/konrad"} cmd))
+         build:hugo (shell "hugo -D --minify")
+
+         stage {:doc "Stages the website."}
+         publish {:doc "Publishes the website."}}}
+

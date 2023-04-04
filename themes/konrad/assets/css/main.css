@@ -1,0 +1,6 @@
+.dark-mode-controls .dark-mode-toggle:not(:checked) + span::after {
+    content: "🌙";
+}
+.dark-mode-controls .dark-mode-toggle:checked + span::after {
+    content: "☀️";
+}

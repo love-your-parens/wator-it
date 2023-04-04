@@ -1,0 +1,1 @@
+<ul>{{ range . }}{{ if not .HasChildren }}<li>{{ .Pre }}<a href="{{ .URL }}"><span>{{ .Name }}</span></a>{{ .Post }}</li>{{ end }}{{ end }}</ul>

@@ -1,0 +1,1 @@
+<ul>{{ range . }}<li>{{ if .HasChildren }}{{ partial "navigation-nested" .Children }}{{ else }}{{ .Pre }}<a href="{{ .URL }}"><span>{{ .Name }}</span></a>{{ .Post }}{{ end }}</li>{{ end }}</ul>
