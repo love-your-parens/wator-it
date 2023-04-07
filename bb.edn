@@ -31,10 +31,10 @@
                   :task (run '-develop {:parallel true})}
          -develop {:depends [develop:tailwind develop:hugo develop:hiccup]}
          develop:hugo (shell "hugo serve -D --disableFastRender")
-         develop:tailwind (let [in "assets/css/tailwind.src.css"
-                                out "assets/css/tailwind.css"
+         develop:tailwind (let [in "themes/konrad/assets/css/tailwind.src.css"
+                                out "themes/konrad/assets/css/tailwind.css"
                                 cmd (format "npx tailwindcss -i %s -o %s --watch" in out)]
-                            (shell {:dir "themes/konrad"} cmd))
+                            (shell cmd))
          develop:hiccup {:requires ([pod.babashka.fswatcher :as fw]
                                     [hiccuped-hawk :as hh]
                                     [clojure.core.async :as a])
@@ -58,10 +58,10 @@
                                      (recur t f))))}
 
          build {:doc "Builds the website." :depends [build:tailwind build:hugo]}
-         build:tailwind (let [in "assets/css/tailwind.src.css"
-                              out "assets/css/tailwind.css"
-                              cmd (format "npx tailwindcss -i %s -o %s" in out)]
-                          (shell {:dir "themes/konrad"} cmd))
+         build:tailwind (let [in "themes/konrad/assets/css/tailwind.src.css"
+                              out "themes/konrad/assets/css/tailwind.css"
+                              cmd (format "npx tailwindcss -i %s -o %s --minify" in out)]
+                          (shell cmd))
          build:hugo (shell "hugo -D --minify")
 
          stage {:doc "Stages the website."}
