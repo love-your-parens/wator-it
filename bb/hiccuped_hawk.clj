@@ -33,8 +33,14 @@
   ([filename]
    (compile "" "" filename))
   ([base-dir output-dir filename]
-   (when-let [markup (load-file filename)]
-     (let [output (compile-target base-dir output-dir filename)]
-       (println "\nRecompiling template:\t" filename "->" output)
-       (spit output (h/html {:escape-strings? (not (-> markup meta :raw))}
-                            markup))))))
+   (try
+     (when-let [markup (load-file filename)]
+       (let [output (compile-target base-dir output-dir filename)]
+         (println "\nRecompiling template:\t" filename "->" output)
+         (spit output (h/html {:escape-strings? (not (-> markup meta :raw))}
+                              markup))))
+     (catch Exception e
+       (println "ERROR!"
+                "Failed to compile template"
+                (format "[%s]:" filename)
+                (.getMessage e))))))
