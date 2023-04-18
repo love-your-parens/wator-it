@@ -12,9 +12,6 @@ module.exports = {
         'two-face-outline': "url('/img/face-outlines.svg')",
       }
     },
-    screens: {
-      '2xl': '1440px',
-    },
     keyframes: {
       shimmer: {
         '0%, 100%': {
