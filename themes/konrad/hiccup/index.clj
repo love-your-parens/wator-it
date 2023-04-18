@@ -1,15 +1,11 @@
-(require '[hugo :refer [raw-tag] :rename {raw-tag t}])
+(require '[hugo :refer [raw-tag] :rename {raw-tag t}]
+         '[hiccup2.core :refer [raw]])
 
 (list
- (t define "main")
- [:div {:class ["md:grid" "grid-cols-2" "max-w-7x1" "mx-auto"]}
-  [:article {:class ["m-3 md:m-5 float-left"]}
-   [:span {:id ["inline-graphic"]
-           :class ["hidden" "sm:inline" "md:hidden" "float-right" "w-1/4" "m-2"]}
-    [:img {:src "/some-image.jpt" :alt "Portrait of the author. He looks like a trustworthy chap."}]]
+ (t define "main") 
+ [:div {:class ["mx-auto"]}
+  [:article {:class ["p-5" "bg-neutral-100" "dark:bg-neutral-900" "w-1/2"]} 
    (t .Content)]
-  [:div {:id "side-graphic" :class ["text-center" "hidden" "md:block" "my-5"]}
-   [:img {:src "/some-image.jpt"
-          :class ["sticky" "object-contain" "top-0"]
-          :alt "Portrait of the author. He looks like a trustworthy chap."}]]]
+  [:article {:class ["p-5" "bg-neutral-100" "dark:bg-neutral-900" "w-1/2" "ml-[50%]"]}
+   (t .Content)]]
  (t end))
