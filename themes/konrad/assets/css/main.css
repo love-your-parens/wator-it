@@ -1,6 +1,60 @@
-.dark-mode-controls .dark-mode-toggle:not(:checked) + span::after {
+.dark-mode-controls .dark-mode-toggle:not(:checked)+span::after {
     content: "🌙";
 }
-.dark-mode-controls .dark-mode-toggle:checked + span::after {
+
+.dark-mode-controls .dark-mode-toggle:checked+span::after {
     content: "☀️";
 }
+
+.feather-fall {
+    opacity: 0;
+    animation-name: feather-fall-keyframes;
+    animation-duration: 30000ms;
+    animation-delay: 0ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.feather-fall--delay-0 {
+    animation-delay: 0;
+}
+.feather-fall--delay-1 {
+    animation-delay: 6000ms;
+}
+.feather-fall--delay-2 {
+    animation-delay: 12000ms;
+}
+.feather-fall--delay-3 {
+    animation-delay: 18000ms;
+}
+.feather-fall--delay-4 {
+    animation-delay: 24000ms;
+}
+.feather-fall--delay-5 {
+    animation-delay: 24000ms;
+}
+@keyframes feather-fall-keyframes {
+    0% {opacity:0;transform:translateX(0px) translateY(0px) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(29deg);}
+    4.76% {opacity:0.7142857142857143;transform:translateX(6.4531px) translateY(43px) scale(1) rotateX(0.4286deg) rotateY(-26.2857deg) rotateZ(28.2857deg);}
+    9.52% {opacity:1;transform:translateX(12.5826px) translateY(86px) scale(1) rotateX(0.8571deg) rotateY(-52.5714deg) rotateZ(27.5714deg);}
+    14.29% {opacity:1;transform:translateX(18.0812px) translateY(129px) scale(1) rotateX(1.2857deg) rotateY(-78.8571deg) rotateZ(26.8571deg);}
+    19.05% {opacity:1;transform:translateX(22.6731px) translateY(172px) scale(1) rotateX(1.7143deg) rotateY(-105.1429deg) rotateZ(26.1429deg);}
+    23.81% {opacity:1;transform:translateX(26.1281px) translateY(215px) scale(1) rotateX(2.1429deg) rotateY(-131.4286deg) rotateZ(25.4286deg);}
+    28.57% {opacity:1;transform:translateX(28.2729px) translateY(258px) scale(1) rotateX(2.5714deg) rotateY(-157.7143deg) rotateZ(24.7143deg);}
+    33.33% {opacity:1;transform:translateX(29px) translateY(301px) scale(1) rotateX(3deg) rotateY(-184deg) rotateZ(24deg);}
+    38.1% {opacity:1;transform:translateX(26.8708px) translateY(349.7143px) scale(1) rotateX(2.5714deg) rotateY(-157.7143deg) rotateZ(22deg);}
+    42.86% {opacity:1;transform:translateX(20.905px) translateY(398.4286px) scale(1) rotateX(2.1429deg) rotateY(-131.4286deg) rotateZ(20deg);}
+    47.62% {opacity:1;transform:translateX(12.2842px) translateY(447.1429px) scale(1) rotateX(1.7143deg) rotateY(-105.1429deg) rotateZ(18deg);}
+    52.38% {opacity:1;transform:translateX(2.7158px) translateY(495.8571px) scale(1) rotateX(1.2857deg) rotateY(-78.8571deg) rotateZ(16deg);}
+    57.14% {opacity:1;transform:translateX(-5.905px) translateY(544.5714px) scale(1) rotateX(0.8571deg) rotateY(-52.5714deg) rotateZ(14deg);}
+    61.9% {opacity:0.9523809523809524;transform:translateX(-11.8708px) translateY(593.2857px) scale(1) rotateX(0.4286deg) rotateY(-26.2857deg) rotateZ(12deg);}
+    66.67% {opacity:0.8333333333333331;transform:translateX(-14px) translateY(642px) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(10deg);}
+    71.43% {opacity:0.7142857142857141;transform:translateX(-13.3068px) translateY(678.8571px) scale(1) rotateX(-1.1429deg) rotateY(0.7143deg) rotateZ(5.7143deg);}
+    76.19% {opacity:0.5952380952380951;transform:translateX(-11.3644px) translateY(715.7143px) scale(1) rotateX(-2.2857deg) rotateY(1.4286deg) rotateZ(1.4286deg);}
+    80.95% {opacity:0.4761904761904763;transform:translateX(-8.5576px) translateY(752.5714px) scale(1) rotateX(-3.4286deg) rotateY(2.1429deg) rotateZ(-2.8571deg);}
+    85.71% {opacity:0.35714285714285743;transform:translateX(-5.4424px) translateY(789.4286px) scale(1) rotateX(-4.5714deg) rotateY(2.8571deg) rotateZ(-7.1429deg);}
+    90.48% {opacity:0.23809523809523814;transform:translateX(-2.6356px) translateY(826.2857px) scale(1) rotateX(-5.7143deg) rotateY(3.5714deg) rotateZ(-11.4286deg);}
+    95.24% {opacity:0.11904761904761885;transform:translateX(-0.6932px) translateY(863.1429px) scale(1) rotateX(-6.8571deg) rotateY(4.2857deg) rotateZ(-15.7143deg);}
+    100% {opacity:0;transform:translateX(0px) translateY(900px) scale(1) rotateX(-8deg) rotateY(5deg) rotateZ(-20deg);}
+}
+  
