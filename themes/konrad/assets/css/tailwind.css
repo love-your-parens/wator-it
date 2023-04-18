@@ -563,10 +563,6 @@ p {
   z-index: -10;
 }
 
-.m-1 {
-  margin: 0.25rem;
-}
-
 .m-5 {
   margin: 1.25rem;
 }
@@ -584,20 +580,24 @@ p {
   margin-left: 1.25rem;
 }
 
-.ml-\[50\%\] {
-  margin-left: 50%;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
-.mt-2 {
-  margin-top: 0.5rem;
+.ml-\[25\%\] {
+  margin-left: 25%;
 }
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
 }
 
 .block {
@@ -620,8 +620,8 @@ p {
   height: 100vh;
 }
 
-.w-1\/2 {
-  width: 50%;
+.w-3\/4 {
+  width: 75%;
 }
 
 .w-screen {
@@ -629,27 +629,7 @@ p {
 }
 
 .max-w-screen-2xl {
-  max-width: 1440px;
-}
-
-.-rotate-12 {
-  --tw-rotate: -12deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.rotate-12 {
-  --tw-rotate: 12deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-rotate-6 {
-  --tw-rotate: -6deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.rotate-6 {
-  --tw-rotate: 6deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  max-width: 1536px;
 }
 
 .cursor-pointer {
@@ -710,26 +690,20 @@ p {
   background-attachment: fixed;
 }
 
-.bg-bottom {
-  background-position: bottom;
-}
-
 .bg-no-repeat {
   background-repeat: no-repeat;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
+.p-0\.5 {
+  padding: 0.125rem;
+}
+
 .p-5 {
   padding: 1.25rem;
-}
-
-.px-0 {
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-.px-0\.5 {
-  padding-left: 0.125rem;
-  padding-right: 0.125rem;
 }
 
 .px-3 {
@@ -737,26 +711,18 @@ p {
   padding-right: 0.75rem;
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-.pb-0 {
-  padding-bottom: 0px;
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-.pb-0\.5 {
-  padding-bottom: 0.125rem;
-}
-
-.text-right {
-  text-align: right;
+.text-left {
+  text-align: left;
 }
 
 .font-sans {
@@ -787,16 +753,8 @@ p {
   color: rgb(38 38 38 / var(--tw-text-opacity));
 }
 
-.opacity-100 {
-  opacity: 1;
-}
-
 .opacity-90 {
   opacity: 0.9;
-}
-
-.mix-blend-color-dodge {
-  mix-blend-mode: color-dodge;
 }
 
 .transition-colors {
@@ -822,4 +780,77 @@ p {
 :is(.dark .dark\:text-neutral-200) {
   --tw-text-opacity: 1;
   color: rgb(229 229 229 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .md\:ml-\[40\%\] {
+    margin-left: 40%;
+  }
+
+  .md\:w-3\/5 {
+    width: 60%;
+  }
+
+  .md\:px-5 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:invisible {
+    visibility: hidden;
+  }
+
+  .lg\:ml-\[50\%\] {
+    margin-left: 50%;
+  }
+
+  .lg\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+
+  .lg\:w-1\/2 {
+    width: 50%;
+  }
+}
+
+@media (orientation: portrait) {
+  .portrait\:bg-\[left_-50vw_bottom\] {
+    background-position: left -50vw bottom;
+  }
+
+  .portrait\:bg-\[right_-50vw_bottom\] {
+    background-position: right -50vw bottom;
+  }
+}
+
+@media (min-width: 1024px) {
+  @media (orientation: portrait) {
+    .lg\:portrait\:bg-bottom {
+      background-position: bottom;
+    }
+  }
+}
+
+@media (orientation: landscape) {
+  .landscape\:bg-\[left_-50vh_bottom_-25vh\] {
+    background-position: left -50vh bottom -25vh;
+  }
+
+  .landscape\:bg-\[right_-50vh_bottom_-25vh\] {
+    background-position: right -50vh bottom -25vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  @media (orientation: landscape) {
+    .lg\:landscape\:bg-bottom {
+      background-position: bottom;
+    }
+  }
 }
