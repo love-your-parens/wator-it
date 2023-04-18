@@ -620,12 +620,20 @@ p {
   height: 100vh;
 }
 
+.h-\[100vmin\] {
+  height: 100vmin;
+}
+
 .w-3\/4 {
   width: 75%;
 }
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[100vmin\] {
+  width: 100vmin;
 }
 
 .max-w-screen-2xl {
@@ -650,6 +658,10 @@ p {
   align-items: baseline;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -662,6 +674,10 @@ p {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.self-end {
+  align-self: flex-end;
 }
 
 .bg-neutral-100 {
@@ -757,10 +773,30 @@ p {
   opacity: 0.9;
 }
 
+.opacity-20 {
+  opacity: 0.2;
+}
+
 .transition-colors {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes shimmer {
+    0%, 100% {
+      transform: translateX(5px) translateY(-5px);
+    }
+
+    50% {
+      transform: translateX(-5px) translateY(5px);
+    }
+  }
+
+  .motion-safe\:animate-shimmer {
+    animation: shimmer 9s ease-in-out infinite;
+  }
 }
 
 :is(.dark .dark\:bg-neutral-700) {

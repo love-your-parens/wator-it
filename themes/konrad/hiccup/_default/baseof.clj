@@ -45,10 +45,6 @@
                             "portrait:bg-[left_-50vw_bottom]"
                             "lg:landscape:bg-bottom"
                             "lg:portrait:bg-bottom"])}]
-     #_[:div {:class (into base ["flex" "justify-center"
-                                 "motion-safe:animate-shimmer" "opacity-20"])}
-        [:img {:src (t $bg2.RelPermalink)
-               :class ["self-end" "w-[100vmin]" "h-[100vmin]"]}]]
      [:div {:class (into sizing ["opacity-90" "flex" "justify-evenly" "items-start" "px-8"])}
       [:span {:class ["feather-fall" "feather-fall--delay-2"]}
        (feather {:size 32 :rotation 180 :stroke-width ".5" :outer-color "#6c65ca"})]
