@@ -57,10 +57,10 @@
       [:span {:class ["feather-fall" "feather-fall--delay-3"]}
        (feather {:size 32 :rotation 180 :stroke-width ".5" :outer-color "#11efef"})]
       [:span {:class ["feather-fall" "feather-fall--delay-2"]}
-       (feather {:size 32 :rotation 180 :stroke-width ".5" :outer-color "#f00f74"})]]]) 
+       (feather {:size 32 :rotation 180 :stroke-width ".5" :outer-color "#f00f74"})]]])
   [:div {:id "top-layer"}
    [:div {:id "top-bar" :class ["mt-4"]}
     (t partial "header" .)]
-   [:main (t block "main" .) (t end)]
-   (t partial "footer" .)]]
+   [:main (t block "main" .) (t end)]]
+  [:footer (t block "footer" .) (t end)]]
  (raw "</html>"))

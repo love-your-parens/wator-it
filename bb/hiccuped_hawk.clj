@@ -25,7 +25,7 @@
 
 (comment
   (let [base-dir "themes/konrad/hiccup/"
-        output-dir "themes\\konrad/layout/"
+        output-dir "themes\\konrad/layout/" ; mixed path separators are OK
         file "themes\\konrad\\hiccup\\404.clj"]
     (println (compile-target base-dir output-dir file))))
 

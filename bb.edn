@@ -2,19 +2,40 @@
  :paths ["bb"]
  :tasks {:requires ([clojure.string :refer [join starts-with? ends-with?]])
          :init (do
-                 (require '[pod.babashka.fswatcher :as fw])
+                 (require '[pod.babashka.fswatcher :as fw]
+                          '[hiccuped-hawk :as hh]
+                          '[clojure.core.async :as a])
+
                  (def platform-alias
                    (if (starts-with? (System/getProperty "os.name") "Windows")
                      :windows :*nix))
+
                  (defn run-subtasks
                    "Interprets every command line argument as a subtask key to select.
-                      Selects all available keys if no input is given.
-                      For every selected key present in `subtasks`, `f` will be called on its value.
-                      Expected to produce side-effects only."
+                    Selects all available keys if no input is given.
+                    For every selected key present in `subtasks`, `f` will be called on its value.
+                    Expected to produce side-effects only."
                    [subtasks f]
                    (doseq [s (or *command-line-args* (keys subtasks))]
                      (when-let [data ((keyword s) subtasks)]
-                       (f data)))))
+                       (f data))))
+
+                 (defn hawk-hiccup [in out]
+                   (let [ch (a/chan (a/dropping-buffer 10)
+                                    (filter (fn [e]
+                                              (and (:path e)
+                                                   (ends-with? (:path e) ".clj")
+                                                   (#{:write :create} (:type e))))))]
+                     (fw/watch in (fn [e] (a/go (a/>! ch e))) {:recursive true})
+                     ;; Try to mitigate duplicate events while processing the queue.
+                     (loop [prev-t (System/currentTimeMillis)
+                            prev-f nil]
+                       (let [f (:path (a/<!! ch))
+                             t (System/currentTimeMillis)]
+                         (when (or (not= f prev-f)
+                                   (> (- t prev-t) 10))
+                           (time (hh/compile in out f)))
+                         (recur t f))))))
 
          platform (println "Platform detected:" platform-alias)
 
@@ -35,27 +56,8 @@
                                 out "themes/konrad/assets/css/tailwind.css"
                                 cmd (format "npx tailwindcss -i %s -o %s --watch" in out)]
                             (shell cmd))
-         develop:hiccup {:requires ([pod.babashka.fswatcher :as fw]
-                                    [hiccuped-hawk :as hh]
-                                    [clojure.core.async :as a])
-                         :task (let [ch (a/chan (a/dropping-buffer 10)
-                                                (filter (fn [e]
-                                                          (and (:path e)
-                                                               (ends-with? (:path e) ".clj")
-                                                               (#{:write :create} (:type e))))))]
-                                 (println "Instructing the hiccuped hawk to hawk your Hiccup...")
-                                 (fw/watch "themes/konrad/hiccup/"
-                                           (fn [e] (a/go (a/>! ch e)))
-                                           {:recursive true})
-                                 ;; Try to mitigate duplicate events while processing the queue.
-                                 (loop [prev-t (System/currentTimeMillis)
-                                        prev-f nil]
-                                   (let [f (:path (a/<!! ch))
-                                         t (System/currentTimeMillis)]
-                                     (when (or (not= f prev-f)
-                                               (> (- t prev-t) 10))
-                                       (time (hh/compile "themes/konrad/hiccup/" "themes/konrad/layouts/" f)))
-                                     (recur t f))))}
+         develop:hiccup {:task (do (println "Instructing the hiccuped hawk to hawk your Hiccup...")
+                                   (hawk-hiccup "hiccup/layouts" "themes/konrad/layouts"))}
 
          build {:doc "Builds the website." :depends [build:tailwind build:hugo]}
          build:tailwind (let [in "themes/konrad/assets/css/tailwind.src.css"
