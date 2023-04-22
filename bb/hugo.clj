@@ -1,10 +1,7 @@
-(ns hugo
-  {:clj-kondo/ignore [:unresolved-symbol]}
-  (:require [clojure.string :as s]
-            [clojure.set :refer [intersection]]
-            [hiccup.util :as h]))
-
-
+(ns hugo (:require [clojure.string :as s]
+                   [clojure.set :refer [intersection]]
+                   [hiccup.util :as h]
+                   [cheshire.core :as json]))
 
 (def aggregations {:. "."
                    :_ ""})
@@ -112,6 +109,9 @@
 
 (defmacro -raw-tag- [& symbols]
   `(h/raw-string (-tag- ~@symbols)))
+
+(defn front-matter [m]
+  (h/raw-string (format "%s\n" (json/generate-string m))))
 
 (comment
   ;; Examples.
