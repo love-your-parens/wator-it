@@ -57,4 +57,36 @@
     95.24% {opacity:0.11904761904761885;transform:translateX(-0.6932px) translateY(863.1429px) scale(1) rotateX(-6.8571deg) rotateY(4.2857deg) rotateZ(-15.7143deg);}
     100% {opacity:0;transform:translateX(0px) translateY(900px) scale(1) rotateX(-8deg) rotateY(5deg) rotateZ(-20deg);}
 }
-  
+
+@keyframes name--emerge {
+    0%, 60% {
+        opacity: 0;
+        top: -30px;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+#emblem--name {animation: 1s name--emerge linear 1;}
+
+@keyframes handwriting--stroke-1 {0%,26% {stroke-dasharray: 219; stroke-dashoffset: 219;} 58% {stroke-dashoffset: 0;}}
+@keyframes handwriting--stroke-2 {0%,58% {stroke-dasharray: 68; stroke-dashoffset: 68;} 68% {stroke-dashoffset: 0;}}
+@keyframes handwriting--stroke-3 {0%,68% {stroke-dasharray: 42; stroke-dashoffset: 42;} 74% {stroke-dashoffset: 0;}}
+@keyframes handwriting--stroke-4 {0%,74% {stroke-dasharray: 16; stroke-dashoffset: -16;} 77% {stroke-dashoffset: -0;}}
+@keyframes handwriting--stroke-5 {0%,77% {stroke-dasharray: 45; stroke-dashoffset: 45;} 83% {stroke-dashoffset: 0;}}
+@keyframes handwriting--stroke-6 {0%,83% {stroke-dasharray: 15; stroke-dashoffset: 15;} 86% {stroke-dashoffset: 0;}}
+@keyframes handwriting--stroke-7 {0%,86% {stroke-dasharray: 40; stroke-dashoffset: 40;} 92% {stroke-dashoffset: 0;}}
+@keyframes handwriting--stroke-8 {0%,92% {stroke-dasharray: 12; stroke-dashoffset: 12;} 95% {stroke-dashoffset: 0;}}
+@keyframes handwriting--stroke-9 {0%,96% {stroke-dasharray: 44; stroke-dashoffset: 44;} 100% {stroke-dashoffset: 0;}}
+
+#surname--stroke-1 {animation: 3.79s handwriting--stroke-1 linear 1;}
+#surname--stroke-2 {animation: 3.79s handwriting--stroke-2 linear 1;}
+#surname--stroke-3 {animation: 3.79s handwriting--stroke-3 linear 1;}
+#surname--stroke-4 {animation: 3.79s handwriting--stroke-4 linear 1;}
+#surname--stroke-5 {animation: 3.79s handwriting--stroke-5 linear 1;}
+#surname--stroke-6 {animation: 3.79s handwriting--stroke-6 linear 1;}
+#surname--stroke-7 {animation: 3.79s handwriting--stroke-7 linear 1;}
+#surname--stroke-8 {animation: 3.79s handwriting--stroke-8 linear 1;}
+#surname--stroke-9 {animation: 3.79s handwriting--stroke-9 linear 1;}
