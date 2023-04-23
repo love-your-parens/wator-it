@@ -7,4 +7,7 @@
 <link href={{ (resources.Get "css/main.css" | resources.PostCSS | resources.Minify).RelPermalink }} rel="stylesheet"></style>
 <link href={{ (resources.Get "css/tailwind.css" | resources.PostCSS | resources.Minify).RelPermalink }} rel="stylesheet"></style>
 <script src={{ (resources.Get "js/init.js" | resources.Minify).RelPermalink }} type="text/javascript" defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@100;400;700&family=Montserrat:wght@100;400;900&family=Poiret+One&display=swap" rel="stylesheet">
 {{ hugo.Generator }}
