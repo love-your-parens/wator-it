@@ -3,17 +3,20 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    font-size: 20px;
+  }
   h1 {
-    @apply text-3xl my-2;
+    @apply text-3xl my-2 font-display;
   }
   h2 {
-    @apply text-2xl my-2;
+    @apply text-2xl my-2 font-display;
   }
   h3 {
-    @apply text-xl my-2;
+    @apply text-xl my-2 font-display;
   }
   h4 {
-    @apply text-lg font-bold font-serif my-1;
+    @apply text-lg my-1 font-bold;
   }
   p {
     @apply my-2;
