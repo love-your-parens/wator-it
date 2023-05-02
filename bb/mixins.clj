@@ -1,22 +1,32 @@
 (ns mixins)
 
 (defn feather
-  [& {:keys [size stroke-width outer-color inner-color rotation]}]
+  [& {:keys [size stroke-width inner-width color inner-color rotation class]}]
   [:svg {:xmlns "http://www.w3.org/2000/svg"
+         :class (or class [])
          :width (or size 48) :height (or size 48)
          :viewBox "0 0 12 12"
          :style {:transform (format "rotate(%ddeg)"
                                     (or rotation 0))}}
    [:path {:d "M9.436 4.242c0 2.124-2.042 6.073-3.086 7.886-1.054-1.814-3.086-5.762-3.086-7.886C3.264 2.118 4.646.395 6.35.395s3.086 1.723 3.086 3.847z"
            :style {:fill "none"
-                   :stroke (or outer-color inner-color "#000")
+                   :stroke (or color inner-color)
                    :stroke-width (or stroke-width ".375")
                    :stroke-dasharray "none"}}]
    [:path {:d "M8.348 2.763a1.998 1.998 0 0 1-1.997 1.999 1.998 1.998 0 0 1-2-1.997 1.998 1.998 0 0 1 1.996-2A1.998 1.998 0 0 1 8.348 2.76"
            :style {:fill "none"
-                   :stroke (or inner-color outer-color "#000")
-                   :stroke-width (or stroke-width ".375")
+                   :stroke (or inner-color color)
+                   :stroke-width (or inner-width stroke-width ".375")
                    :stroke-dasharray "none"}}]])
+
+(defn feather-footer
+  []
+  [:div {:class ["text-right" "leading-[16px]"]
+         :alt "Decorative element: two simple geometric shapes resembling peacock feathers"}
+   (feather {:size 16 :rotation 90 :stroke-width 0.7 :outer-color "#c2347e"
+             :class ["inline-block" "relative" "-top-[1px]" "stroke-neutral-800" "dark:stroke-neutral-100"]})
+   (feather {:size 16 :rotation 270 :stroke-width 0.7 :outer-color "#c2347e"
+             :class ["inline-block" "stroke-neutral-800" "dark:stroke-neutral-100"]})])
 
 (defn- destructure-container
   [[tag & contents]]
@@ -46,3 +56,14 @@
                     "w-3/4" "ml-[25%]"
                     "mb-3" "lg:mb-0"
                     "lg:w-1/2" "lg:ml-[50%]"]))
+
+(def link
+  (let [style ["border-b" "border-dashed" "hover:border-solid"
+               "border-neutral-600" "dark:border-neutral-300"]]
+    (fn
+      ([url alt content]
+       [:a {:class style :alt alt :href url} content])
+      ([url content]
+       [:a {:class style :href url} content])
+      ([url]
+       [:a {:class style :href url} url]))))
