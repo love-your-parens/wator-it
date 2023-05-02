@@ -423,31 +423,41 @@ video {
 }
 
 html {
-  font-size: 20px;
+  font-size: 24px;
+  --tw-text-opacity: 1;
+  color: rgb(38 38 38 / var(--tw-text-opacity));
+}
+
+:is(.dark html) {
+  --tw-text-opacity: 1;
+  color: rgb(245 245 245 / var(--tw-text-opacity));
 }
 
 h1 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  font-family: "Poiret One", cursive;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.875rem;
   line-height: 2.25rem;
+  font-weight: 700;
 }
 
 h2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  font-family: "Poiret One", cursive;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
+  font-weight: 300;
 }
 
 h3 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-  font-family: "Poiret One", cursive;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
   line-height: 1.75rem;
+  font-weight: 300;
 }
 
 h4 {
@@ -565,6 +575,10 @@ p {
   position: relative;
 }
 
+.-top-\[1px\] {
+  top: -1px;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -636,6 +650,10 @@ p {
   height: 100vh;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .min-h-\[90vh\] {
   min-height: 90vh;
 }
@@ -662,6 +680,14 @@ p {
           user-select: none;
 }
 
+.list-inside {
+  list-style-position: inside;
+}
+
+.list-disc {
+  list-style-type: disc;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -680,6 +706,19 @@ p {
 
 .whitespace-nowrap {
   white-space: nowrap;
+}
+
+.border-b {
+  border-bottom-width: 1px;
+}
+
+.border-dashed {
+  border-style: dashed;
+}
+
+.border-neutral-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(82 82 82 / var(--tw-border-opacity));
 }
 
 .bg-neutral-100 {
@@ -742,10 +781,6 @@ p {
   padding: 0.75rem;
 }
 
-.p-5 {
-  padding: 1.25rem;
-}
-
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -759,6 +794,10 @@ p {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .font-display {
   font-family: "Poiret One", cursive;
 }
@@ -768,7 +807,7 @@ p {
 }
 
 .font-serif {
-  font-family: "Hepta Slab", serif;
+  font-family: "Zilla Slab", serif;
 }
 
 .text-4xl {
@@ -784,6 +823,14 @@ p {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+.leading-\[16px\] {
+  line-height: 16px;
 }
 
 .text-neutral-800 {
@@ -803,6 +850,15 @@ p {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.hover\:border-solid:hover {
+  border-style: solid;
+}
+
+:is(.dark .dark\:border-neutral-300) {
+  --tw-border-opacity: 1;
+  border-color: rgb(212 212 212 / var(--tw-border-opacity));
 }
 
 :is(.dark .dark\:bg-neutral-700) {

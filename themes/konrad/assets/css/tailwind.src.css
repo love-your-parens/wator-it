@@ -4,16 +4,17 @@
 
 @layer base {
   html {
-    font-size: 20px;
+    font-size: 24px;
+    @apply text-neutral-800 dark:text-neutral-100;
   }
   h1 {
-    @apply text-3xl my-2 font-display;
+    @apply text-3xl my-2 font-sans font-bold;
   }
   h2 {
-    @apply text-2xl my-2 font-display;
+    @apply text-2xl my-2 font-sans font-light;
   }
   h3 {
-    @apply text-xl my-2 font-display;
+    @apply text-xl my-2 font-sans font-light;
   }
   h4 {
     @apply text-lg my-1 font-bold;
