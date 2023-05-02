@@ -15,7 +15,7 @@ module.exports = {
       },
       fontFamily: {
         sans: '"Montserrat", sans-serif',
-        serif: '"Hepta Slab", serif',
+        serif: '"Zilla Slab", serif',
         display: '"Poiret One", cursive',
       },
       screens: {
