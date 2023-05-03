@@ -49,4 +49,17 @@
             toggle(false)
         }
     }
+
+    // Add smooth scrolling to anchor links.
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', (e)=> {
+            let ref = a.getAttribute('href')
+            document.querySelector(ref).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+            history.pushState(null, null, ref)
+            e.preventDefault()
+        })
+    })
 }
