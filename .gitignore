@@ -52,3 +52,6 @@ Thumbs.db
 public/
 resources/
 .hugo_build.lock
+
+# Tailwind's output
+themes/konrad/assets/css/tailwind.css
