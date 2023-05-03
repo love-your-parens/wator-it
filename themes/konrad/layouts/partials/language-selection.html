@@ -1,1 +1,1 @@
-<ul>{{ range .Translations -}}<li><a href="{{ .Permalink }}">{{ .Lang }}{{ replace .Lang "en" "gb" | printf ":flag_%s:" | emojify }}</a></li>{{ end -}}</ul>
+{{ range .Translations -}}<a class="flex items-center hover:underline" href="{{ .RelPermalink }}">{{ .Site.Language.LanguageName }}{{ $flag := resources.Get (printf "img/flag-%s.svg" .Lang) }}<img class="mx-1" src="{{ $flag.RelPermalink }}" width="36" /></a>{{ end -}}

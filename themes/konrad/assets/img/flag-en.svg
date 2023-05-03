@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <rect width="292.018" height="190.689" x="4.393" y="4.939" ry="7.693" style="fill:none;stroke:#333;stroke-width:6.03929;stroke-linecap:round;stroke-linejoin:round"/>
+  <rect width="38.076" height="336.492" x="157.009" y="-320.433" ry="13.153" style="display:inline;fill:#e6e6e6;stroke:none;stroke-width:6.59391;stroke-linecap:round;stroke-linejoin:round" transform="matrix(.10448 .99453 -.86943 .49406 0 0)"/>
+  <rect width="38.076" height="336.492" x="-5.514" y="6.723" ry="12.092" style="display:inline;fill:#e6e6e6;stroke:none;stroke-width:6.59391;stroke-linecap:round;stroke-linejoin:round" transform="matrix(-.10448 .99453 .86943 .49406 0 0)"/>
+  <rect width="340.424" height="9.604" x="-53.538" y="167.452" rx="4.843" ry="7.947" style="display:inline;fill:#800033;stroke:none;stroke-width:5.76354;stroke-linecap:round;stroke-linejoin:round" transform="matrix(.8381 -.5455 .31061 .95054 0 0)"/>
+  <rect width="324.956" height="10.243" x="-329.381" y="18.486" rx="4.623" ry="8.476" style="display:inline;fill:#800033;stroke:none;stroke-width:5.81533;stroke-linecap:round;stroke-linejoin:round" transform="matrix(-.8916 -.4528 .0722 .99739 0 0)"/>
+  <rect width="293.692" height="44.827" x="3.091" y="77.674" ry="9.916" style="display:inline;fill:#e6e6e6;stroke:none;stroke-width:6.80961;stroke-linecap:round;stroke-linejoin:round"/>
+  <rect width="55.647" height="190.513" x="121.341" y="4.637" ry="7.693" style="display:inline;fill:#e6e6e6;stroke:none;stroke-width:5.99811;stroke-linecap:round;stroke-linejoin:round"/>
+  <rect width="289.055" height="25.505" x="5.41" y="87.335" ry="5.642" style="display:inline;fill:#800033;stroke:none;stroke-width:5.09577;stroke-linecap:round;stroke-linejoin:round"/>
+  <rect width="38.644" height="186.649" x="129.843" y="6.569" ry="7.537" style="display:inline;fill:#800033;stroke:none;stroke-width:4.94748;stroke-linecap:round;stroke-linejoin:round"/>
+  <path d="M178.146 9.275v52.168l91.2-52.168Zm-145.298.772 85.402 48.305V10.047ZM8.888 41.35v34.392H66.08Zm282.485.384L230.316 76.13h61.057zm-60.283 81.54 60.283 35.165v-35.166Zm-222.201.386v34.78l59.896-34.78Zm170.03 15.844v50.623h86.177zm-59.124.387L28.982 190.9h90.813z" style="display:inline;fill:#214478;stroke:none;stroke-width:5.99811;stroke-linecap:round;stroke-linejoin:round"/>
+</svg>
