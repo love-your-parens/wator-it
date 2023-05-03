@@ -57,13 +57,15 @@
                     "mb-3" "lg:mb-0"
                     "lg:w-1/2" "lg:ml-[50%]"]))
 
-(def link
-  (let [style ["border-b" "border-dashed" "hover:border-solid"
-               "border-neutral-600" "dark:border-neutral-300"]]
-    (fn
-      ([url alt content]
-       [:a {:class style :alt alt :href url} content])
-      ([url content]
-       [:a {:class style :href url} content])
-      ([url]
-       [:a {:class style :href url} url]))))
+(defn link*
+  ([target url alt content]
+   [:a {:target target :href url :alt alt
+        :class ["border-b" "border-dashed" "hover:border-solid"
+                "border-neutral-600" "dark:border-neutral-300"]}
+    content])
+  ([target url content] (link* target url nil content))
+  ([target url] (link* target url nil url)))
+
+(def link (partial link* nil))
+(def local-link (partial link* "_self"))
+(def external-link (partial link* "_blank"))
