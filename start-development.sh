@@ -1,1 +1,1 @@
-/usr/env/bin bb develop
+/usr/bin/env bb develop
