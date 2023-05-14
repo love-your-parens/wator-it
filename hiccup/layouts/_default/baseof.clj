@@ -44,17 +44,17 @@
                             "portrait:bg-[left_-50vw_bottom_-7vh]"])}]
      [:div {:class (into sizing ["opacity-90" "flex" "justify-evenly" "items-start" "px-8"])}
       [:span {:class ["feather-fall" "feather-fall--delay-2"]}
-       (feather {:size 32 :rotation 180 :stroke-width ".5" :outer-color "#6c65ca"})]
+       (feather {:size 32 :rotation 180 :stroke-width ".5" :color "#6c65ca"})]
       [:span {:class ["feather-fall" "feather-fall--delay-5"]}
-       (feather {:size 32 :rotation 180 :stroke-width ".5" :outer-color "#11efef"})]
+       (feather {:size 32 :rotation 180 :stroke-width ".5" :color "#11efef"})]
       [:span {:class ["feather-fall" "feather-fall--delay-1"]}
-       (feather {:size 32 :rotation 180 :stroke-width ".5" :outer-color "#f00f74"})]
+       (feather {:size 32 :rotation 180 :stroke-width ".5" :color "#f00f74"})]
       [:span {:class ["feather-fall" "feather-fall--delay-0"]}
-       (feather {:size 32 :rotation 180 :stroke-width ".5" :outer-color "#6c65ca"})]
+       (feather {:size 32 :rotation 180 :stroke-width ".5" :color "#6c65ca"})]
       [:span {:class ["feather-fall" "feather-fall--delay-3"]}
-       (feather {:size 32 :rotation 180 :stroke-width ".5" :outer-color "#11efef"})]
+       (feather {:size 32 :rotation 180 :stroke-width ".5" :color "#11efef"})]
       [:span {:class ["feather-fall" "feather-fall--delay-2"]}
-       (feather {:size 32 :rotation 180 :stroke-width ".5" :outer-color "#f00f74"})]]])
+       (feather {:size 32 :rotation 180 :stroke-width ".5" :color "#f00f74"})]]])
   [:div {:id "top-layer"}
    [:header (t partial "header" .)]
    [:main (t block "main" .) (t end)]
