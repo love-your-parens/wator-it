@@ -62,4 +62,17 @@
             e.preventDefault()
         })
     })
+
+    // On-the-fly mailto anchoring.
+    document.querySelectorAll(".mailme").forEach(el => {
+        el.addEventListener('click', () => {
+            let link = document.createElement("a")
+            let name = "konrad"
+            let domain = window.location.hostname
+            let address = [name, domain].join("@")
+            link.href = "mailto:" + address
+            link.click()
+            return false;
+        })
+    })
 }
