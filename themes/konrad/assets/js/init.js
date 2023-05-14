@@ -28,8 +28,8 @@
         document.querySelectorAll('input[type=checkbox].dark-mode-toggle').forEach((el) => {
             el.checked = false
             el.addEventListener('change', function() {
-                addTransitions()
                 toggle(this.checked)
+                addTransitions()
             })
             el.addEventListener('darkModeToggle', function(event) {
                 this.checked = event.detail.enabled
