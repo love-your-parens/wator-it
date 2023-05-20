@@ -22,4 +22,7 @@
   p {
     @apply my-2;
   }
+  strong {
+    @apply font-bold font-sans not-italic text-sm;
+  }
 }
