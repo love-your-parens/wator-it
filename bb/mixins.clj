@@ -1,4 +1,5 @@
-(ns mixins)
+(ns mixins 
+  {:clj-kondo/ignore [:clojure-lsp/unused-public-var]})
 
 (defn feather
   [& {:keys [size stroke-width inner-width color inner-color rotation class]}]
