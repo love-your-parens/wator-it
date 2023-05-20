@@ -11,96 +11,97 @@
     [:h2 "Tworzę rzeczy zgrabne i użyteczne"]
     [:p {:class []}
      "W branży od przeszło dekady, poznałem - i zmogłem - niejedną zagwozdkę. Od prostych stron internetowych, przez "
-     [:em [:abbr {:title "Content Management System"} "CMS-y"]]
-     ", po platformy " [:em "e-commerce"]
+     [:strong [:abbr {:title "Content Management System"} "CMS-y"]]
+     ", po platformy " [:strong "e-commerce"]
      ", oraz złożone konstrukcje, stanowiące trzon działalności marketingu sieciowego, tzw. "
-     [:em [:abbr {:title "Multi-Level Marketing"} "MLM"]]
+     [:strong [:abbr {:title "Multi-Level Marketing"} "MLM"]]
      "."]
     (feather-footer)])
   (right-column
    [:article
     [:h1 "Wszystko jest dla ludzi"]
-    [:p "Pragnę, by z mojej pracy był pożytek. Nie wystarczy, że działa. "
-     "Musi być wygodne w obsłudze, musi być czytelne, a i oczu razić nie powinno. "
-     "Słowem: kładę nacisk na "
-     [:em [:abbr {:title "User Experience"} "UX"]]
-     " i nie lekceważę niczego, co przekłada się na odczucia odbiorcy."]
-    [:p "Schludna powierzchowność to nie wszystko. Nie ma programów skończonych, a większość przechodzi z rąk do rąk. "
-     "Dbam zatem, aby moją pracę mogli podjąć lub spożytkować inni, nie głowiąc się przy tym stale - co też autor miał na myśli. "]
-    [:p "Dobrze napisany kod mówi ponoć sam za siebie, ale nie mówi wszystkiego. Wymaga didaskaliów."]
+    [:h2 "Dla użytkowników"]
+    [:p "Za probierz mojej pracy obieram odczucia odbiorcy. Dbam by to, co przygotowuję było wygodne i czytelne w obsłudze, ale też i atrakcyjne z wierzchu. Słowem: zwracam szczególną uwagę na "
+     [:strong [:abbr {:title "User Experience"} "UX"]]
+     ", chociażby z tej przyczyny, że produkt nieużywany jest też siłą rzeczy nieużyteczny."]
+    [:h2 "Dla fachowców"]
+    [:p "Schludna oprawa to nie wszystko. Nie ma programów skończonych, a większość przechodzi z rąk do rąk. Dbam zatem, aby moją pracę mogli podjąć lub spożytkować inni, nie głowiąc się przy tym stale - co też autor miał na myśli. Dobrze napisany kod mówi ponoć sam za siebie, ale nie mówi wszystkiego. Wymaga didaskaliów."] 
     (feather-footer)])
   (left-column
-   [:article [:h1 "W warsztacie"]
-    [:p "Korzystam z wielu narzędzi. Po niektóre sięgam chętnie, po inne chłodniej, lecz decydują względy praktyczne. "
-     "Lwią część codziennej pracy realizuję przy użyciu powszechnych w "
-     [:em "Web Developmencie"]
-     " technologii."]
-    [:p "Po stronie serwera prym wiedzie zatem nieprzesadnie urodziwe, ale sprawdzone " (external-link "https://php.net" "PHP") ". "
-     "W przeglądarce rządzi tymczasem JavaScript z domieszką " (external-link "https://www.typescriptlang.org/" "TypeScriptu") ". "
-     "Tu i ówdzie - jak rodzynka w serniku - trafi się coś " (external-link "https://react.dev/" "Reactowego") ". "]
-    [:p "Dane ładuję do baz relacyjnych (" (interpose ", " [(external-link "https://www.mysql.com/" "MySQL")
-                                                            (external-link "https://mariadb.org/" "MariaDB")
-                                                            (external-link "https://www.sqlite.org/" "SQLite")])
-     "), bądź nierelacyjnych (" (external-link "https://redis.io/" "Redis") "). "]
-    [:p "Gdy zachodzi potrzeba rozpowszechnienia znaczącej ilości danych wewnątrz systemu, "
-     "sięgam po znakomity serwer kolejek " (external-link "https://www.rabbitmq.com/" "RabbitMQ") ". "]
-    [:p "Wirtualizację umożliwia mi natomiast wszechobecny dziś " (external-link "https://www.docker.com/" "Docker") "."]
+   [:article 
+    [:h1 "W warsztacie"]
+    [:h2 "Od lamp po dorsze"]
+    [:p "Od lat współpracuję z norweską firmą " [:strong (external-link "https://eqology.com" "Eqology")]
+     ", niestrudzenie zabiegającą o zapewnienie powszechnej zdrowotności za rozsądne pieniądze. Stoi za tym przedsięwzięciem pokaźny system informatyczny pod opieką kilku zuchów. Jestem jednym z nich. "]
+    [:p "Mamy tu cały mikrokosmos usług. Jest sklep internetowy, wraz z systemem "
+     [:strong [:abbr {:title "Customer Relationship Management"} "CRM"]] 
+     ";  Jest tzw. "
+     [:em {:class ["whitespace-nowrap"]} 
+      (external-link "https://en.wikipedia.org/wiki/Back-office_software" "Back-Office")]
+     "; System zwrotów; Liczne integracje z usługami zewnętrznymi - bramkami płatności, systemami korespondencji itd.; Jest w końcu serce całego przedsięwzięcia: " 
+     [:strong "platforma biznesowa"]
+     " dla naszych partnerów handlowych."]
+    [:p "Eqology jest nietypową firmą, o nietypowych potrzebach. Wymaga rozwiązań szytych na miarę. Wiele tu zatem autorskich programów, opartych jednak - jakby na przekór - na znanych i wprost wszechobecnych w tej dziedzinie technologiach. U podstaw większości usług stoi bowiem sprawdzony zestaw oprogramowania, zaszyty w akronimie " 
+     [:strong [:abbr {:title "Linux-Apache-MySQL-PHP"} "LAMP"]] ". "] 
     (feather-footer)])
   (right-column
-   [:article [:h1 "W pracowni"]
-    [:p "W samodzielnej pracy sięgam po bardziej frywolne rozwiązania. Oto wybrane."]
-    [:h2 "Clojure"]
-    [:p "Mam słabość do " (external-link "https://clojure.org/" "Clojure")
-     " we wszystkich jego odmianach ("
-     (interpose ", " [(external-link "https://clojurescript.org/" "ClojureScript")
-                      (external-link "https://babashka.org/" "Babashka")]) " itd.). "
-     "To szwajcarski scyzoryk na naboje. Funkcyjny, wielowątkowy, interaktywny ("
-     [:abbr {:title "Read-Eval-Print-Loop"} "REPL"]
-     "!) i szybki. "
-     "A te nawiasy… Kochaj, albo rzuć."]
-    [:p "Z pomocą Clojure opracowałem szereg głupstw, między innymi:"]
+   [:article
+    [:h1 "W pracowni"]
+    [:h2 "Co pan tam zmalował?"]
+    [:p "Na co dzień zajmuję się głównie " [:em "Web Developmentem"]
+     " w pełnym przekroju, tj. " [:strong {:class ["whitespace-nowrap"]} "Full-Stack"] ". "
+     "Po godzinach i do szuflady sięgam natomiast po inne tematy, i inne technologie."] 
+    [:p "Opracowałem szereg rozmaitych głupstw, między innymi:"]
     [:ul {:class ["list-inside" "list-disc"]}
-     [:li "Interaktywną bazę haseł i myśli uporządkowanych hierarchicznie - jako drzewo, "
-      "na wzór systemu plików, z użyciem wyszukiwania rozmytego"]
-     [:li [:em "Bota"] " łączącego się z aplikacją " [:em "Discord"]
-      " by serwować na życzenie (i ku pokrzepieniu serc) zdjęcia uroczych pandek rudych"]]
-    [:h2 "Python"]
-    [:p "Nie lubię węży, ale dla " (external-link "https://python.org/" "Pythona") " robię wyjątek. "
-     "Popełniłem w nim niejeden mały program, "
-     "jak choćby prototyp platformy " [:em "blogowej"] " oparty o "
-     (external-link "https://bottlepy.org" "Bottle") ", pod tytułem "
-     [:em "Graphomania"] " (grafomania) - " [:q "dla tych, co pisać muszą, a niekoniecznie powinni"] ". "
-     "Ot, drobna uszczypliwość z mojej strony - również pod adresem własnym. "
-     "Czytelnik raczy wybaczyć."]
+     [:li "Interaktywną bazę haseł i myśli uporządkowanych hierarchicznie: jako drzewo, z użyciem tzw. "
+      (external-link "https://en.wikipedia.org/wiki/Zipper_(data_structure)" "Zipperów") ". "
+      "Dostęp do haseł umożliwiają tu: graficzna przeglądarka, podobna do eksploratora plików, oraz funkcja wyszukiwania rozmytego."]
+     [:li [:strong "Bota"] " łączącego się z aplikacją " [:strong "Discord"]
+      " by serwować na życzenie (i ku pokrzepieniu serc) zdjęcia uroczych pandek rudych. Wskład programu wchodzi również prymitywny mechanizm moderacyjny, obecny tu nie bez kozery. Zdjęcia pochodzą bowiem z internetu i są dobierane z grubsza przypadkowo. Dość powiedzieć, że nie wszystkie nadają się do druku."]
+     [:li "Prototyp platformy " [:strong "blogowej"] " oparty o "
+      (external-link "https://bottlepy.org" "Bottle") ", pod tytułem "
+      [:strong "Graphomania"] " (grafomania) - " 
+      [:q "dla tych, co pisać muszą, a niekoniecznie powinni"] ". "
+      "Ot, drobna uszczypliwość z mojej strony - również pod adresem własnym. Czytelnik raczy wybaczyć."]
+     [:li "Bibliotekę pomocniczą o nazwie " [:strong "Phunky"]
+      ", przenoszącą kilka zasadniczych idiomów i funkcjonalności języka " 
+      (external-link "https://clojure.org/" "Clojure")
+      " do " (external-link "https://php.net" "PHP") "."]]
     (feather-footer)])
   (left-column
    [:article
     [:h1 "READY▮"]
-    [:p "Moja przygoda z szeroko rozumianą informatyką rozpoczęła się dawno temu, "
-     "gdy jako szkrab po raz pierwszy zetknąłem się z 8-bitowym komputerem Atari. "
-     "Było to świeckie objawienie, cud w pudełku. Głowa aż puchła mi od cudów jarzących się na dnie kineskopu."]
-    [:h2 "Przyszłość"]
-    [:p "Wszystko jak wiadomo płynie, a w świecie cyfrowym zmagamy się ze szczególnie drapieżnym nurtem. "
-     "Kto stoi w miejscu - ten tonie. Ja pływam słabo. Wodę lubię w brzuchu, w płucach nie. "
-     "Rad-nierad nadstawiam zatem uszu i nie domykam głowy."]
+    [:p "Moja przygoda z szeroko rozumianą informatyką rozpoczęła się dawno temu, gdy jako szkrab po raz pierwszy zetknąłem się z 8-bitowym komputerem Atari. Było to świeckie objawienie, cud w pudełku. Głowa aż puchła mi od cudów jarzących się na dnie kineskopu."]
+    [:h2 "Moje Atari"]
+    [:p "Oczarowały mnie oczywiście przede wszystkim gry. To słabość, której ulegam po dziś dzień. Kiedy jednak doczekałem się w końcu własnej maszyny ze znakiem góry Fuji, stanąłem przed kolejną przeszkodą. Nie miałem ani magnetofonu, ani stacji dysków. Oprócz instrukcji obsługi, wyposażenie stanowiły: "
+     [:em "Joystick"] ", oraz jeden jedyny " [:em "cartridge"] " z grą " [:strong "Donkey Kong"] ". "
+     "Wiedziałem wszakże, że ta maszyna potrafi znacznie więcej!"]
+    [:h2 "Zrób to sam"]
+    [:p "Szybko odkryłem, że uruchomione bez "
+     [:em "wsadu"] " Atari wyświetla piękne, turkusowe tło, a na nim słowo-klucz: " [:strong "READY"] " (ang.: " [:em "gotowy"] "). Gotowość tę podkreślał, dosłownie i w przenośni, prostokątny kursor - wrota do innego świata. Za morskim błękitem krył się bowiem interaktywny interpreter języka "
+     (external-link "https://en.wikipedia.org/wiki/Atari_BASIC" "BASIC")
+     ". Tak się zaczęło."]
+    [:p "Te korzenie dają o sobie znać. Ich przejawem może być to, że moim ulubionym językiem programowania jest dziś "
+     [:strong (external-link "https://clojure.org/" "Clojure")] " - w dużej mierze z uwagi na silnie interaktywną metodę pracy w oparciu o " 
+     [:abbr {:title "Read-Eval-Print-Loop"} "REPL"]
+     ". To pod wieloma względami rozwinięcie tych doświadczeń, które pamiętam z " 
+     [:strong "BASIC"] "-a."]
     (feather-footer)])
   (right-column
    [:article
     [:h1 {:id "contact"} "Kontakt"]
     [:h3 "Poczta elektroniczna"]
-    [:p "W sprawach zawodowych zapraszam do kontaktu poprzez "
+    [:p "W sprawach zawodowych zapraszam do kontaktu przez "
      (let [[tag attrs & content] (link "#" "e-mail")]
        [tag (-> attrs
                 (update-in [:class] #(conj % "mailme"))
                 (assoc :onclick "return false;"))
         content]) ". "]
-    [:h3 "Platformy społecznościowe "]
-    [:p "Jestem dostępny na każdej z poniższych platform:"]
+    [:h3 "W sieci"] 
     [:ul {:class ["list-inside" "list-disc"]}
-     [:li "LinkedIn"]
-     [:li "Jira"]
-     [:li "Github"]
-     [:li "Bitbucket"]]
+     [:li (external-link "https://github.com/love-your-parens" "Github")]
+     [:li (external-link "https://www.linkedin.com/in/konrad-w%C4%85tor-95538565" "LinkedIn")]
+     [:li (external-link "https://www.goldenline.pl/konrad-wator2/" "GoldenLine")]]
     (feather-footer)])]
  (t end)
  (t define "footer")
