@@ -4,7 +4,8 @@
          :init (do
                  (require '[pod.babashka.fswatcher :as fw]
                           '[hiccuped-hawk :as hh]
-                          '[clojure.core.async :as a])
+                          '[clojure.core.async :as a]
+                          '[babashka.fs :as fs])
 
                  (def platform-alias
                    (if (starts-with? (System/getProperty "os.name") "Windows")
@@ -66,7 +67,11 @@
                               out "themes/konrad/assets/css/tailwind.css"
                               cmd (format "npx tailwindcss -i %s -o %s --minify" in out)]
                           (shell cmd))
-         build:hugo (shell "hugo -D --minify")
+         build:hugo (do
+                      (let [f (fs/file "public")]
+                        (when (fs/directory? f)
+                          (fs/delete-tree f)))
+                      (shell "hugo -D --minify"))
 
          stage {:doc "Stages the website."}
          publish {:doc "Publishes the website."}}}
