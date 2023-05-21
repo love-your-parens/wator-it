@@ -54,8 +54,10 @@
          develop:hugo (shell "hugo serve -D --disableFastRender")
          develop:tailwind (let [in "themes/konrad/assets/css/tailwind.src.css"
                                 out "themes/konrad/assets/css/tailwind.css"
-                                cmd (format "npx tailwindcss -i %s -o %s --watch" in out)]
-                            (shell cmd))
+                                build (format "npx tailwindcss -i %s -o %s" in out)
+                                watch (format "npx tailwindcss -i %s -o %s --watch" in out)]
+                            (shell build)
+                            (shell watch))
          develop:hiccup {:task (do (println "Instructing the hiccuped hawk to hawk your Hiccup...")
                                    (hawk-hiccup "hiccup/layouts" "themes/konrad/layouts"))}
 
@@ -68,4 +70,3 @@
 
          stage {:doc "Stages the website."}
          publish {:doc "Publishes the website."}}}
-
