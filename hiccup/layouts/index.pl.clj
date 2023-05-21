@@ -9,7 +9,7 @@
    [:article
     [:h1 "Programista, Web Developer"]
     [:h2 "Tworzę rzeczy zgrabne i użyteczne"]
-    [:p {:class []}
+    [:p
      "W branży od przeszło dekady, poznałem - i zmogłem - niejedną zagwozdkę. Od prostych stron internetowych, przez "
      [:strong [:abbr {:title "Content Management System"} "CMS-y"]]
      ", po platformy " [:strong "e-commerce"]
@@ -25,24 +25,24 @@
      [:strong [:abbr {:title "User Experience"} "UX"]]
      ", chociażby z tej przyczyny, że produkt nieużywany jest też siłą rzeczy nieużyteczny."]
     [:h2 "Dla fachowców"]
-    [:p "Schludna oprawa to nie wszystko. Nie ma programów skończonych, a większość przechodzi z rąk do rąk. Dbam zatem, aby moją pracę mogli podjąć lub spożytkować inni, nie głowiąc się przy tym stale - co też autor miał na myśli. Dobrze napisany kod mówi ponoć sam za siebie, ale nie mówi wszystkiego. Wymaga didaskaliów."] 
+    [:p "Schludna oprawa to nie wszystko. Nie ma programów skończonych, a większość przechodzi z rąk do rąk. Dbam zatem, aby moją pracę mogli podjąć lub spożytkować inni, nie głowiąc się przy tym stale - co też autor miał na myśli. Dobrze napisany kod mówi ponoć sam za siebie, ale nie mówi wszystkiego. Wymaga didaskaliów."]
     (feather-footer)])
   (left-column
-   [:article 
+   [:article
     [:h1 "W warsztacie"]
     [:h2 "Od lamp po dorsze"]
     [:p "Od lat współpracuję z norweską firmą " [:strong (external-link "https://eqology.com" "Eqology")]
      ", niestrudzenie zabiegającą o zapewnienie powszechnej zdrowotności za rozsądne pieniądze. Stoi za tym przedsięwzięciem pokaźny system informatyczny pod opieką kilku zuchów. Jestem jednym z nich. "]
     [:p "Mamy tu cały mikrokosmos usług. Jest sklep internetowy, wraz z systemem "
-     [:strong [:abbr {:title "Customer Relationship Management"} "CRM"]] 
+     [:strong [:abbr {:title "Customer Relationship Management"} "CRM"]]
      ";  Jest tzw. "
-     [:em {:class ["whitespace-nowrap"]} 
+     [:em {:class ["whitespace-nowrap"]}
       (external-link "https://en.wikipedia.org/wiki/Back-office_software" "Back-Office")]
-     "; System zwrotów; Liczne integracje z usługami zewnętrznymi - bramkami płatności, systemami korespondencji itd.; Jest w końcu serce całego przedsięwzięcia: " 
+     "; System zwrotów; Liczne integracje z usługami zewnętrznymi - bramkami płatności, systemami korespondencji itd.; Jest w końcu serce całego przedsięwzięcia: "
      [:strong "platforma biznesowa"]
      " dla naszych partnerów handlowych."]
-    [:p "Eqology jest nietypową firmą, o nietypowych potrzebach. Wymaga rozwiązań szytych na miarę. Wiele tu zatem autorskich programów, opartych jednak - jakby na przekór - na znanych i wprost wszechobecnych w tej dziedzinie technologiach. U podstaw większości usług stoi bowiem sprawdzony zestaw oprogramowania, zaszyty w akronimie " 
-     [:strong [:abbr {:title "Linux-Apache-MySQL-PHP"} "LAMP"]] ". "] 
+    [:p "Eqology jest nietypową firmą, o nietypowych potrzebach. Wymaga rozwiązań szytych na miarę. Wiele tu zatem autorskich programów, opartych jednak - jakby na przekór - na znanych i wprost wszechobecnych w tej dziedzinie technologiach. U podstaw większości usług stoi bowiem sprawdzony zestaw oprogramowania, zaszyty w akronimie "
+     [:strong [:abbr {:title "Linux-Apache-MySQL-PHP"} "LAMP"]] ". "]
     (feather-footer)])
   (right-column
    [:article
@@ -50,7 +50,7 @@
     [:h2 "Co pan tam zmalował?"]
     [:p "Na co dzień zajmuję się głównie " [:em "Web Developmentem"]
      " w pełnym przekroju, tj. " [:strong {:class ["whitespace-nowrap"]} "Full-Stack"] ". "
-     "Po godzinach i do szuflady sięgam natomiast po inne tematy, i inne technologie."] 
+     "Po godzinach i do szuflady sięgam natomiast po inne tematy, i inne technologie."]
     [:p "Opracowałem szereg rozmaitych głupstw, między innymi:"]
     [:ul {:class ["list-inside" "list-disc"]}
      [:li "Interaktywną bazę haseł i myśli uporządkowanych hierarchicznie: jako drzewo, z użyciem tzw. "
@@ -60,11 +60,11 @@
       " by serwować na życzenie (i ku pokrzepieniu serc) zdjęcia uroczych pandek rudych. Wskład programu wchodzi również prymitywny mechanizm moderacyjny, obecny tu nie bez kozery. Zdjęcia pochodzą bowiem z internetu i są dobierane z grubsza przypadkowo. Dość powiedzieć, że nie wszystkie nadają się do druku."]
      [:li "Prototyp platformy " [:strong "blogowej"] " oparty o "
       (external-link "https://bottlepy.org" "Bottle") ", pod tytułem "
-      [:strong "Graphomania"] " (grafomania) - " 
+      [:strong "Graphomania"] " (grafomania) - "
       [:q "dla tych, co pisać muszą, a niekoniecznie powinni"] ". "
       "Ot, drobna uszczypliwość z mojej strony - również pod adresem własnym. Czytelnik raczy wybaczyć."]
      [:li "Bibliotekę pomocniczą o nazwie " [:strong "Phunky"]
-      ", przenoszącą kilka zasadniczych idiomów i funkcjonalności języka " 
+      ", przenoszącą kilka zasadniczych idiomów i funkcjonalności języka "
       (external-link "https://clojure.org/" "Clojure")
       " do " (external-link "https://php.net" "PHP") "."]]
     (feather-footer)])
@@ -82,9 +82,9 @@
      (external-link "https://en.wikipedia.org/wiki/Atari_BASIC" "BASIC")
      ". Tak się zaczęło."]
     [:p "Te korzenie dają o sobie znać. Ich przejawem może być to, że moim ulubionym językiem programowania jest dziś "
-     [:strong (external-link "https://clojure.org/" "Clojure")] " - w dużej mierze z uwagi na silnie interaktywną metodę pracy w oparciu o " 
+     [:strong (external-link "https://clojure.org/" "Clojure")] " - w dużej mierze z uwagi na silnie interaktywną metodę pracy w oparciu o "
      [:abbr {:title "Read-Eval-Print-Loop"} "REPL"]
-     ". To pod wieloma względami rozwinięcie tych doświadczeń, które pamiętam z " 
+     ". To pod wieloma względami rozwinięcie tych doświadczeń, które pamiętam z "
      [:strong "BASIC"] "-a."]
     (feather-footer)])
   (right-column
@@ -97,7 +97,7 @@
                 (update-in [:class] #(conj % "mailme"))
                 (assoc :onclick "return false;"))
         content]) ". "]
-    [:h3 "W sieci"] 
+    [:h3 "W sieci"]
     [:ul {:class ["list-inside" "list-disc"]}
      [:li (external-link "https://github.com/love-your-parens" "Github")]
      [:li (external-link "https://www.linkedin.com/in/konrad-w%C4%85tor-95538565" "LinkedIn")]
