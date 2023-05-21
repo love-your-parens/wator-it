@@ -51,7 +51,7 @@
     }
 
     // Add smooth scrolling to anchor links.
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
+    document.querySelectorAll('a[href^="\#"]').forEach(a => {
         a.addEventListener('click', (e)=> {
             let ref = a.getAttribute('href')
             document.querySelector(ref).scrollIntoView({
