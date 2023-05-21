@@ -4,13 +4,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
 <meta name="robots" content={{- if .Params.private }} "noindex, nofollow" {{ else }} "index, follow" {{ end -}}>
+{{ if hugo.IsProduction }}
 <link href={{ (resources.Get "css/main.css" | resources.PostCSS | resources.Minify).RelPermalink }} rel="stylesheet"></style>
 <link href={{ (resources.Get "css/tailwind.css" | resources.PostCSS | resources.Minify).RelPermalink }} rel="stylesheet"></style>
 <script src={{ (resources.Get "js/init.js" | resources.Minify).RelPermalink }} type="text/javascript" defer></script>
+{{ else }}
+<link href={{ (resources.Get "css/main.css").RelPermalink }} rel="stylesheet"></style>
+<link href={{ (resources.Get "css/tailwind.css").RelPermalink }} rel="stylesheet"></style>
+<script src={{ (resources.Get "js/init.js").RelPermalink }} type="text/javascript" defer></script>
+<script src={{ (resources.Get "js/dev.js").RelPermalink }} type="text/javascript" defer></script>
+{{ end }}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Poiret+One&family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
-{{ if not hugo.IsProduction }}
-<script src={{ (resources.Get "js/dev.js").RelPermalink }} type="text/javascript" defer></script>
-{{ end }}
 {{ hugo.Generator }}
