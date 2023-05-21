@@ -17,7 +17,7 @@
                  "max-w-screen-2xl" "m-auto" "transition-colors"]}
   (let [sizing ["fixed" "w-screen" "h-screen" "bottom-0" "-z-10"]
         bg ["bg-fixed" "bg-no-repeat" "bg-contain"]]
-    [:div {:id "intermediate-layers"}
+    [:div {:id "intermediate-layers" :aria-hidden "true"}
      [:div {:class (concat sizing bg
                            ["panoramic:hidden"
                             "bg-two-face-light" "dark:bg-two-face-dark"

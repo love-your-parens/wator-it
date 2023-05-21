@@ -1,14 +1,19 @@
 (require '[hugo :refer [raw-tag] :rename {raw-tag t}])
 
 [:div.site-emblem {:class ["text-4xl" "md:text-6xl" "font-display" "whitespace-nowrap"]} 
- [:a {:href (t site.Home.RelPermalink)}
+ [:a {:href (t site.Home.RelPermalink) :alt "Back to the front page"}
   [:span {:id "emblem--name"
           :class ["relative" "inline-block"
                   "text-transparent" "bg-clip-text" "bg-gradient-to-br"
                   "from-cyan-600" "to-pink-600"
-                  "dark:from-cyan-500" "dark:to-pink-500"]}
+                  "dark:from-cyan-500" "dark:to-pink-500"]
+          :aria-label "Konrad"
+          :aria-description "The name 'Konrad' written in technical, geometric text"}
    "Konrad"]
   [:svg {:id "emblem--surname"
+         :alt "Wątor"
+         :aria-label "Wątor"
+         :aria-description "The surname 'Wątor' in playful handwriting"
          :class ["inline" "mx-1" "h-11" "md:h-16" "pb-[3px]"]
          :xmlns "http://www.w3.org/2000/svg",
          :xml:space "preserve", :stroke-miterlimit "10",

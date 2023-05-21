@@ -1,9 +1,11 @@
 (require '[hugo :as h :refer [raw-tag raw-tag-] :rename {raw-tag t raw-tag- t-}])
 
-(list 
+(list
  (t- range .Translations)
- [:a {:href (t .RelPermalink) :class ["flex" "items-center" "hover:underline"]} 
+ (t $linkAlt := (printf "Switch to the %s language" .Site.Language.LanguageName))
+ (t $flagAlt := (printf "Flag representing the %s language" .Site.Language.LanguageName))
+ (t $flagRes := resources.Get (printf "img/flag-%s.svg" .Lang))
+ [:a {:href (t .RelPermalink) :class ["flex" "items-center" "hover:underline"] :alt (t $linkAlt)}
   (t .Site.Language.LanguageName)
-  (t $flag := resources.Get (printf "img/flag-%s.svg" .Lang))
-  [:img {:src (t $flag.RelPermalink) :width 36 :class ["mx-1"]}]]
+  [:img {:src (t $flagRes.RelPermalink) :width 36 :class ["mx-1"] :alt (t $flagAlt)}]]
  (t- end))

@@ -23,7 +23,8 @@
 (defn feather-footer
   []
   [:div {:class ["text-right" "leading-[16px]"]
-         :alt "Decorative element: two simple geometric shapes resembling peacock feathers"}
+         :alt "Decorative element: two simple geometric shapes resembling peacock feathers"
+         :aria-hidden "true"}
    (feather {:size 16 :rotation 90 :stroke-width 0.7 :outer-color "#c2347e"
              :class ["inline-block" "relative" "-top-[1px]" "stroke-neutral-800" "dark:stroke-neutral-100"]})
    (feather {:size 16 :rotation 270 :stroke-width 0.7 :outer-color "#c2347e"
