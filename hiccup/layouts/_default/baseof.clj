@@ -8,9 +8,6 @@
  [:head
   (t partial "head" .)
   (t block "head" .) (t end)]
- [:div {:class ["hidden"]}
-  (t $bg := resources.Get "img/bg-photo.png") (t $bg.RelPermalink)
-  (t $bg2 := resources.Get "img/face-outlines.svg") (t $bg2.RelPermalink)]
  [:body {:id "bottom-layer"
          :class ["bg-neutral-400" "text-neutral-800" "font-serif"
                  "dark:bg-neutral-700" "dark:text-neutral-200"
