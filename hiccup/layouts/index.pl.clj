@@ -7,7 +7,7 @@
  [:div {:class ["mx-auto" "text-sm" "md:text-base"]}
   (left-column
    [:article
-    [:h1 "Programista, Web Developer"]
+    [:h1 "Programista, " [:span {:class "whitespace-nowrap"} "Web Developer"]]
     [:h2 "Tworzę rzeczy zgrabne i użyteczne"]
     [:p
      "W branży od przeszło dekady, poznałem - i zmogłem - niejedną zagwozdkę. Od prostych stron internetowych, przez "
