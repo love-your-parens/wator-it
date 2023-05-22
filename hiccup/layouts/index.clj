@@ -99,14 +99,14 @@
         content]) ". "]
     [:h3 "On the Web"]
     [:ul {:class ["list-inside" "list-disc"]}
-     (t $ghLight := ((resources.Get "img/github-mark-white.svg" :.) RelPermalink))
-     (t $ghDark := ((resources.Get "img/github-mark.svg" :.) RelPermalink))
+     (t $ghLight := ((resources.Get "img/third-party/github-mark-white.svg" :.) RelPermalink))
+     (t $ghDark := ((resources.Get "img/third-party/github-mark.svg" :.) RelPermalink))
      [:li (external-link "https://github.com/love-your-parens"
                          (list [:span {:aria-hidden "true"}
                                 [:img {:src (t $ghDark) :class ["inline" "dark:hidden" "h-3" "align-baseline"]}]
                                 [:img {:src (t $ghLight) :class ["hidden" "dark:inline" "h-3" "align-baseline"]}]]
                                " Github"))]
-     (t $inWhite := ((resources.Get "img/In-White-21.png" :.) RelPermalink))
+     (t $inWhite := ((resources.Get "img/third-party/In-White-21.png" :.) RelPermalink))
      [:li (external-link "https://www.linkedin.com/in/konrad-w%C4%85tor-95538565"
                          (list [:span {:aria-hidden "true"}
                                 [:span {:class ["inline-block" "dark:hidden" "align-baseline"
