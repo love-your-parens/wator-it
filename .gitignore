@@ -55,3 +55,6 @@ resources/
 
 # Tailwind's output
 themes/konrad/assets/css/tailwind.css
+
+# Credentials
+publish.edn
