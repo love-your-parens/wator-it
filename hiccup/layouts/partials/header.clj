@@ -1,6 +1,6 @@
 (require '[hugo :as h :refer [raw-tag] :rename {raw-tag t}])
 
-[:section {:class ["m-1"] :aria-description "Page heading and general navigation"}
+[:section {:class ["p-1"] :aria-description "Page heading and general navigation"}
  [:div {:class ["flex" "justify-between" "items-baseline" "font-sans"]}
   [:nav {:class ["mx-1"] :alt "Front page navigation"} 
    [:a {:href "#contact" :class ["hover:underline"]} (t i18n "contact")]]
