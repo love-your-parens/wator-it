@@ -82,7 +82,9 @@
          develop:hiccup {:task (do (println "Instructing the hiccuped hawk to hawk your Hiccup...")
                                    (hawk-hiccup "hiccup/layouts" "themes/konrad/layouts"))}
 
-         build {:doc "Builds the website." :depends [build:tailwind build:hugo]}
+         build {:doc "Builds the website."
+                :depends [build:hiccup build:tailwind build:hugo]}
+         build:hiccup (hh/compile-all "hiccup/layouts" "themes/konrad/layouts")
          build:tailwind (let [in "themes/konrad/assets/css/tailwind.src.css"
                               out "themes/konrad/assets/css/tailwind.css"
                               cmd (format "npx tailwindcss -i %s -o %s --minify" in out)]
