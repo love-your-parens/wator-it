@@ -11,13 +11,13 @@
  [:body {:id "bottom-layer"
          :class ["bg-neutral-400" "text-neutral-800" "font-serif"
                  "dark:bg-neutral-700" "dark:text-neutral-200"
-                 "max-w-screen-2xl" "m-auto" "transition-colors"]}
+                 "max-w-screen-2xl" "m-auto" "transition"]}
   (let [sizing ["fixed" "w-screen" "h-screen" "bottom-0" "-z-10"]
         bg ["bg-fixed" "bg-no-repeat" "bg-contain"]]
     [:div {:id "intermediate-layers" :aria-hidden "true"}
      ;; Face, right / lg:center, light
      [:div {:class (concat sizing bg
-                           ["panoramic:hidden"
+                           ["panoramic:hidden" "dark:opacity-0"
                             "bg-two-face-light"
                             "landscape:bg-[right_-50vh_bottom_-25vh]"
                             "portrait:bg-[right_-50vw_bottom_-7vh]"
@@ -26,7 +26,7 @@
      ;; Face, right / lg:center, dark
      [:div {:class (concat sizing bg
                            ["panoramic:hidden"
-                            "opacity-0" "dark:opacity-100" "transition-opacity"
+                            "opacity-0" "dark:opacity-100"
                             "bg-two-face-dark"
                             "landscape:bg-[right_-50vh_bottom_-25vh]"
                             "portrait:bg-[right_-50vw_bottom_-7vh]"
@@ -42,14 +42,14 @@
                             "lg:portrait:bg-[center_bottom_-5vh]"])}]
      ;; Face, left, light
      [:div {:class (concat sizing bg
-                           ["lg:hidden"
+                           ["lg:hidden" "dark:opacity-0"
                             "bg-two-face-light"
                             "landscape:bg-[left_-50vh_bottom_-25vh]"
                             "portrait:bg-[left_-50vw_bottom_-7vh]"])}]
      ;; Face, left, dark
      [:div {:class (concat sizing bg
                            ["lg:hidden"
-                            "opacity-0" "dark:opacity-100" "transition-opacity"
+                            "opacity-0" "dark:opacity-100"
                             "bg-two-face-dark"
                             "landscape:bg-[left_-50vh_bottom_-25vh]"
                             "portrait:bg-[left_-50vw_bottom_-7vh]"])}]
