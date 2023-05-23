@@ -9,8 +9,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'two-face-light': "url('/img/bg-photo-light.webp')",
-        'two-face-dark': "url('/img/bg-photo-dark.webp')",
+        'two-face-light': "url('/img/bg-photo.webp')",
+        'two-face-dark': "url('/img/bg-photo.webp')",
         'two-face-outline': "url('/img/face-outlines.svg')",
       },
       fontFamily: {
