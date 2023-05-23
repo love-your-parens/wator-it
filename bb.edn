@@ -5,7 +5,8 @@
                  (require '[pod.babashka.fswatcher :as fw]
                           '[hiccuped-hawk :as hh]
                           '[clojure.core.async :as a]
-                          '[babashka.fs :as fs])
+                          '[babashka.fs :as fs]
+                          '[clojure.edn :as edn])
 
                  (def platform-alias
                    (if (starts-with? (System/getProperty "os.name") "Windows")
@@ -36,7 +37,26 @@
                          (when (or (not= f prev-f)
                                    (> (- t prev-t) 10))
                            (time (hh/compile in out f)))
-                         (recur t f))))))
+                         (recur t f)))))
+
+                 (def publish-from "public/")
+
+                 (defn publish-to-ftp [user password host path]
+                   (shell "lftp" "-c"
+                          (format "open ftp://%s:%s@%s; mirror -R -P=10 -e %s %s"
+                                  user password host publish-from path)))
+
+                 (defn publish-to-ssh [user password host path]
+                   (shell "rsync" "-r"
+                          publish-from
+                          (format "%s:%s -u%s,%s" host path user password)))
+
+                 (defn publish [method user password host path]
+                   (case method
+                     :ftp (publish-to-ftp user password host path)
+                     :sftp (publish-to-ftp user password host path)
+                     :ssh (publish-to-ssh user password host path)
+                     (throw (Exception. (str "Unrecognised method: " method))))))
 
          platform (println "Platform detected:" platform-alias)
 
@@ -74,4 +94,15 @@
                       (shell "hugo -D --minify"))
 
          stage {:doc "Stages the website."}
-         publish {:doc "Publishes the website."}}}
+         publish {:doc "Publishes the website."
+                  :task (let [credf "publish.edn"]
+                          (println "Building...")
+                          (run 'build)
+                          (println)
+                          (if (fs/exists? credf)
+                            (let [{:keys [host path user password method]}
+                                  (edn/read-string (slurp credf))]
+                              (println (format "Publishing to %s via %s..." host (name method)))
+                              (publish method user password host path))
+                            (println "ERROR! Credentials file not found."
+                                     "Please provide an appropriate" credf "file.")))}}}
