@@ -2,6 +2,6 @@
 
 In no particular order:
 
-- [x] [high] Add a `build` function to Hiccuped Hawk
+- [ ] Try replacing the two webp background images with one that uses transparency
 - [ ] [low] [?] Remove the google fonts dependency / store the fonts locally or as fallback
 - [ ] [low] [?] Add a cookie notification
