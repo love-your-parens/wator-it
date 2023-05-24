@@ -28,35 +28,35 @@
       [:span {:class ["feather-fall" "feather-fall--delay-3"]}
        (feather {:size 32 :rotation 180 :stroke-width ".5" :color "#11efef"})]
       [:span {:class ["feather-fall" "feather-fall--delay-2"]}
-       (feather {:size 32 :rotation 180 :stroke-width ".5" :color "#f00f74"})]]
-     ;; Face, right / lg:center
-     [:div {:class (concat sizing bg
-                           ["lg:hidden"
-                            "bg-two-face-light"
-                            "landscape:bg-[left_-50vh_bottom_-25vh]"
-                            "portrait:bg-[left_-50vw_bottom_-7vh]"])}]
-     ;; Face, left
-     [:div {:class (concat sizing bg
-                           ["panoramic:hidden"
-                            "bg-two-face-light"
-                            "landscape:bg-[right_-50vh_bottom_-25vh]"
-                            "portrait:bg-[right_-50vw_bottom_-7vh]"
-                            "lg:landscape:bg-[center_bottom_-12vh]"
-                            "lg:portrait:bg-[center_bottom_-5vh]"])}]
-     ;; Outlines, right / lg:center
-     [:div {:class (concat sizing bg
-                           ["panoramic:hidden"
-                            "bg-two-face-outline"
-                            "landscape:bg-[right_-50vh_bottom_-25vh]"
-                            "portrait:bg-[right_-50vw_bottom_-7vh]"
-                            "lg:landscape:bg-[center_bottom_-12vh]"
-                            "lg:portrait:bg-[center_bottom_-5vh]"])}]
-     ;; Outlines, left
-     [:div {:class (concat sizing bg
-                           ["lg:hidden"
-                            "bg-two-face-outline"
-                            "landscape:bg-[left_-50vh_bottom_-25vh]"
-                            "portrait:bg-[left_-50vw_bottom_-7vh]"])}]])
+       (feather {:size 32 :rotation 180 :stroke-width ".5" :color "#f00f74"})]] 
+     [:div ;; Face, right / lg:center
+      {:class (concat sizing bg
+                      ["bg-two-face-light"
+                       "landscape:bg-[right_-50vmin_bottom_-25vh]"
+                       "portrait:bg-[right_-50vmin_bottom_-7vh]"
+                       "lg:panoramic:hidden"
+                       "lg:landscape:bg-[center_bottom_-12vh]"
+                       "lg:portrait:bg-[center_bottom_-5vh]"])}]
+     [:div ;; Face, left
+      {:class (concat sizing bg
+                      ["bg-two-face-light"
+                       "lg:hidden"
+                       "landscape:bg-[left_-50vmin_bottom_-25vh]"
+                       "portrait:bg-[left_-50vmin_bottom_-7vh]"])}]
+     [:div ;; Outlines, right / lg:center
+      {:class (concat sizing bg
+                      ["bg-two-face-outline"
+                       "landscape:bg-[right_-50vmin_bottom_-25vh]"
+                       "portrait:bg-[right_-50vmin_bottom_-7vh]"
+                       "lg:panoramic:hidden"
+                       "lg:landscape:bg-[center_bottom_-12vh]"
+                       "lg:portrait:bg-[center_bottom_-5vh]"])}]
+     [:div ;; Outlines, left
+      {:class (concat sizing bg
+                      ["bg-two-face-outline"
+                       "lg:hidden"
+                       "landscape:bg-[left_-50vmin_bottom_-25vh]"
+                       "portrait:bg-[left_-50vmin_bottom_-7vh]"])}]])
   [:div {:id "top-layer"}
    [:header (t partial "header" .)]
    [:main (t block "main" .) (t end)]
