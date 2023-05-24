@@ -58,3 +58,8 @@ themes/konrad/assets/css/tailwind.css
 
 # Credentials
 publish.edn
+stage.edn
+
+# Firebase artifacts
+.firebase*
+firebase.json

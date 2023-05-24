@@ -51,12 +51,28 @@
                           publish-from
                           (format "%s:%s -u%s,%s" host path user password)))
 
-                 (defn publish [method user password host path]
+                 (defn publish-to-firebase []
+                   (shell "firebase" "deploy" "--only" "hosting"))
+
+                 (defn publish
+                   [{:keys [method user password host path]}]
+                   (println (format "Publishing to %s via %s..." (or host "?") (name method)))
                    (case method
                      :ftp (publish-to-ftp user password host path)
                      :sftp (publish-to-ftp user password host path)
                      :ssh (publish-to-ssh user password host path)
-                     (throw (Exception. (str "Unrecognised method: " method))))))
+                     :firebase (publish-to-firebase)
+                     (binding [*out* *err*]
+                       (println "Unrecognised method:" method))))
+
+                 (defn publish-with-credentials-file
+                   [credentials-filename]
+                   (if (fs/exists? credentials-filename)
+                     (publish (edn/read-string (slurp credentials-filename)))
+                     (binding [*out* *err*]
+                       (println "ERROR! Credentials file not found."
+                                "Please provide an appropriate"
+                                credentials-filename "file.")))))
 
          platform (println "Platform detected:" platform-alias)
 
@@ -95,16 +111,15 @@
                           (fs/delete-tree f)))
                       (shell "hugo -D --minify"))
 
-         stage {:doc "Stages the website."}
-         publish {:doc "Publishes the website."
-                  :task (let [credf "publish.edn"]
+         stage {:doc "Publishes the website to the staging host described in `stage.edn`."
+                :task (do
+                        (println "Building...")
+                        (run 'build)
+                        (println)
+                        (publish-with-credentials-file "stage.edn"))}
+         publish {:doc "Publishes the website to the production host described in `publish.edn`."
+                  :task (do
                           (println "Building...")
                           (run 'build)
                           (println)
-                          (if (fs/exists? credf)
-                            (let [{:keys [host path user password method]}
-                                  (edn/read-string (slurp credf))]
-                              (println (format "Publishing to %s via %s..." host (name method)))
-                              (publish method user password host path))
-                            (println "ERROR! Credentials file not found."
-                                     "Please provide an appropriate" credf "file.")))}}}
+                          (publish-with-credentials-file "publish.edn"))}}}
