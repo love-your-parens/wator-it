@@ -30,11 +30,13 @@
                                                    (#{:write :create} (:type e))))))]
                      (fw/watch in (fn [e] (a/go (a/>! ch e))) {:recursive true})
                      ;; Try to mitigate duplicate events while processing the queue.
+                     ;; Seems to only happen in Windows, curiously.
                      (loop [prev-t (System/currentTimeMillis)
                             prev-f nil]
                        (let [f (:path (a/<!! ch))
                              t (System/currentTimeMillis)]
-                         (when (or (not= f prev-f)
+                         (when (or (not= platform-alias :windows)
+                                   (not= f prev-f)
                                    (> (- t prev-t) 10))
                            (time (hh/compile in out f)))
                          (recur t f)))))
