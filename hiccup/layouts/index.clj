@@ -104,8 +104,8 @@
      [:li {:class ["my-2" "md:my-0"]}
       (external-link "https://github.com/love-your-parens"
                      (list [:span {:aria-hidden "true"}
-                            [:img {:src (t $ghDark) :width 18 :height 18 :class ["inline" "dark:hidden" "h-3" "align-baseline"]}]
-                            [:img {:src (t $ghLight) :width 18 :height 18 :class ["hidden" "dark:inline" "h-3" "align-baseline"]}]]
+                            [:img {:src (t $ghDark) :width 18 :height 18 :class ["inline" "dark:hidden" "h-3" "w-auto" "align-baseline"]}]
+                            [:img {:src (t $ghLight) :width 18 :height 18 :class ["hidden" "dark:inline" "h-3" "w-auto" "align-baseline"]}]]
                            " Github"))]
      (t $inWhite := ((resources.Get "img/third-party/In-White-21.png" :.) RelPermalink))
      [:li {:class ["my-2" "md:my-0"]}
@@ -113,8 +113,8 @@
                      (list [:span {:aria-hidden "true"}
                             [:span {:class ["inline-block" "dark:hidden" "align-baseline"
                                             "bg-black" "p-[1px]" "-mb-[1px]" "rounded-sm"]}
-                             [:img {:src (t $inWhite) :width 18 :height 18 :class ["h-3"]}]]
-                            [:img {:src (t $inWhite) :width 18 :height 18 :class ["hidden" "dark:inline" "h-3" "align-baseline"]}]]
+                             [:img {:src (t $inWhite) :width 18 :height 18 :class ["h-3" "w-auto"]}]]
+                            [:img {:src (t $inWhite) :width 18 :height 18 :class ["hidden" "dark:inline" "h-3" "w-auto" "align-baseline"]}]]
                            " LinkedIn"))]
      [:li {:class ["my-2" "md:my-0"]}
       (external-link "https://www.goldenline.pl/konrad-wator2/" "GoldenLine")]]
