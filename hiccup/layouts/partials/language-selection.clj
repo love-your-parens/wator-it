@@ -7,5 +7,5 @@
  (t $flagRes := resources.Get (printf "img/flag-%s.svg" .Lang))
  [:a {:href (t .RelPermalink) :class ["flex" "items-center" "hover:underline"] :alt (t $linkAlt)}
   (t .Site.Language.LanguageName)
-  [:img {:src (t $flagRes.RelPermalink) :width 36 :class ["mx-1"] :alt (t $flagAlt)}]]
+  [:img {:src (t $flagRes.RelPermalink) :width 36 :height 24 :class ["mx-1"] :alt (t $flagAlt)}]]
  (t- end))
