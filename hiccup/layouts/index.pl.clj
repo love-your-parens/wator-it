@@ -71,10 +71,10 @@
   (left-column
    [:article
     [:h1 "READY▮"]
-    [:p "Moja przygoda z szeroko rozumianą informatyką rozpoczęła się dawno temu, gdy jako szkrab po raz pierwszy zetknąłem się z 8-bitowym komputerem Atari. Było to świeckie objawienie, cud w pudełku. Głowa aż puchła mi od cudów jarzących się na dnie kineskopu."]
+    [:p "Moja przygoda z szeroko rozumianą informatyką rozpoczęła się dawno temu, gdy jako szkrab po raz pierwszy zetknąłem się z 8-bitowym komputerem Atari. Było to świeckie objawienie, cud w pudełku. Głowa aż puchła mi od czarów jarzących się na dnie kineskopu."]
     [:h2 "Moje Atari"]
     [:p "Oczarowały mnie oczywiście przede wszystkim gry. To słabość, której ulegam po dziś dzień. Kiedy jednak doczekałem się w końcu własnej maszyny ze znakiem góry Fuji, stanąłem przed kolejną przeszkodą. Nie miałem ani magnetofonu, ani stacji dysków. Oprócz instrukcji obsługi, wyposażenie stanowiły: "
-     [:em "Joystick"] ", oraz jeden jedyny " [:em "cartridge"] " z grą " [:strong "Donkey Kong"] ". "
+     [:em "joystick"] ", oraz jeden jedyny " [:em "cartridge"] " z grą " [:strong "Donkey Kong"] ". "
      "Wiedziałem wszakże, że ta maszyna potrafi znacznie więcej!"]
     [:h2 "Zrób to sam"]
     [:p "Szybko odkryłem, że uruchomione bez "
