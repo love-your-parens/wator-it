@@ -101,20 +101,23 @@
     [:ul {:class ["list-inside" "list-disc"]}
      (t $ghLight := ((resources.Get "/img/third-party/github-mark-white.svg" :.) RelPermalink))
      (t $ghDark := ((resources.Get "/img/third-party/github-mark.svg" :.) RelPermalink))
-     [:li (external-link "https://github.com/love-your-parens"
-                         (list [:span {:aria-hidden "true"}
-                                [:img {:src (t $ghDark) :width 18 :height 18 :class ["inline" "dark:hidden" "h-3" "align-baseline"]}]
-                                [:img {:src (t $ghLight) :width 18 :height 18 :class ["hidden" "dark:inline" "h-3" "align-baseline"]}]]
-                               " Github"))]
+     [:li {:class ["my-2" "md:my-0"]}
+      (external-link "https://github.com/love-your-parens"
+                     (list [:span {:aria-hidden "true"}
+                            [:img {:src (t $ghDark) :width 18 :height 18 :class ["inline" "dark:hidden" "h-3" "align-baseline"]}]
+                            [:img {:src (t $ghLight) :width 18 :height 18 :class ["hidden" "dark:inline" "h-3" "align-baseline"]}]]
+                           " Github"))]
      (t $inWhite := ((resources.Get "img/third-party/In-White-21.png" :.) RelPermalink))
-     [:li (external-link "https://www.linkedin.com/in/konrad-w%C4%85tor-95538565"
-                         (list [:span {:aria-hidden "true"}
-                                [:span {:class ["inline-block" "dark:hidden" "align-baseline"
-                                                "bg-black" "p-[1px]" "-mb-[1px]" "rounded-sm"]}
-                                 [:img {:src (t $inWhite) :width 18 :height 18 :class ["h-3"]}]]
-                                [:img {:src (t $inWhite) :width 18 :height 18 :class ["hidden" "dark:inline" "h-3" "align-baseline"]}]]
-                               " LinkedIn"))]
-     [:li (external-link "https://www.goldenline.pl/konrad-wator2/" "GoldenLine")]]
+     [:li {:class ["my-2" "md:my-0"]}
+      (external-link "https://www.linkedin.com/in/konrad-w%C4%85tor-95538565"
+                     (list [:span {:aria-hidden "true"}
+                            [:span {:class ["inline-block" "dark:hidden" "align-baseline"
+                                            "bg-black" "p-[1px]" "-mb-[1px]" "rounded-sm"]}
+                             [:img {:src (t $inWhite) :width 18 :height 18 :class ["h-3"]}]]
+                            [:img {:src (t $inWhite) :width 18 :height 18 :class ["hidden" "dark:inline" "h-3" "align-baseline"]}]]
+                           " LinkedIn"))]
+     [:li {:class ["my-2" "md:my-0"]}
+      (external-link "https://www.goldenline.pl/konrad-wator2/" "GoldenLine")]]
     (feather-footer)])]
  (t end)
  (t define "footer")
