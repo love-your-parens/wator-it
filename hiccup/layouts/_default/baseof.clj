@@ -9,7 +9,7 @@
   (t partial "head" .)
   (t block "head" .) (t end)]
  [:body {:id "bottom-layer"
-         :class ["bg-neutral-400" "text-neutral-800" "font-serif"
+         :class ["bg-[rgb(180,180,180)]" "text-neutral-800" "font-serif"
                  "dark:bg-neutral-700" "dark:text-neutral-200"
                  "max-w-screen-2xl" "m-auto" "transition"]}
   (let [sizing ["fixed" "w-screen" "h-screen" "bottom-0" "-z-10"]
